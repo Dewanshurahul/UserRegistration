@@ -23,7 +23,7 @@ def mobile_format(mobile_number):
 
 
 def valid_password(password):
-    count = '^(?=.*[A-Z])(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$'
+    count = '^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$'
     if re.match(count, password):
         return True
     return False
