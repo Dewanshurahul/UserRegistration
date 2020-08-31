@@ -22,6 +22,13 @@ def mobile_format(mobile_number):
     return False
 
 
+def valid_password(password):
+    count = '^.{8,}$'
+    if re.match(count, password):
+        return True
+    return False
+
+
 firstname = input("Enter first Name : ")
 if first_caps_three_letter(firstname):
     print("First Name is", firstname)
@@ -45,3 +52,9 @@ if mobile_format(mobile_number):
     print("Mobile Number is", mobile_number)
 else:
     print("Invalid Mobile Number Format")
+
+password = input("Enter Password : ")
+if valid_password(password):
+    print("Passowrd is", password)
+else:
+    print("Enter atleast 8 digit Password")
