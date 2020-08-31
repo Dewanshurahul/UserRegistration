@@ -15,6 +15,13 @@ def valid_email(mail):
     return False
 
 
+def mobile_format(mobile_number):
+    mobile = "^((\+)?(\d{2}[-]))?(\d{10}){1}?$"
+    if (re.search(mobile, mobile_number)):
+        return True
+    return False
+
+
 firstname = input("Enter first Name : ")
 if first_caps_three_letter(firstname):
     print("First Name is", firstname)
@@ -32,3 +39,9 @@ if valid_email(email_id):
     print("Email_id is", email_id)
 else:
     print("Invalid E-mail ID")
+
+mobile_number = input("Enter Mobile Number as XX-XXXXXXXXXX")
+if mobile_format(mobile_number):
+    print("Mobile Number is", mobile_number)
+else:
+    print("Invalid Mobile Number Format")
